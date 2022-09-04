@@ -9,6 +9,7 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
+
 // function getEmailDomain(email){
 //     const domainDivider = email.lastIndexOf("@");
 //     return email.substring(domainDivider +1);
@@ -24,20 +25,22 @@
 // typeOfEmail("t.mellink@novi.nl") geeft geeft "Medewerker"
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
-function typeOfEmail(email){
-    const domainDivider = email.lastIndexOf("@");
-    const emailDomain = email.substring(domainDivider + 1);
-    if (emailDomain === "novi-education.nl"){
-        return "Student";
-    }
-    else if (emailDomain === "novi.nl"){
-        return "Medewerker";
-    }
-    else{
-        return "Extern";
-    }
-}
-console.log(typeOfEmail("n.eeken@novi-education.nl"))
+
+
+// function typeOfEmail(email){
+//     const domainDivider = email.lastIndexOf("@");
+//     const emailDomain = email.substring(domainDivider + 1);
+//     if (emailDomain === "novi-education.nl"){
+//         return "Student";
+//     }
+//     else if (emailDomain === "novi.nl"){
+//         return "Medewerker";
+//     }
+//     else{
+//         return "Extern";
+//     }
+// }
+// console.log(typeOfEmail("n.eeken@novi-education.nl"))
 
 /* Opdracht  3 */
 // Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is. De functie returned true of false, afhankelijk van de uitkomst.
@@ -51,3 +54,13 @@ console.log(typeOfEmail("n.eeken@novi-education.nl"))
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+function checkEmailValidity(email){
+    if (email.includes("@") && (email.indexOf("," >! -1) && !(email.endsWith(".")))){
+        return "Entered a valid adress";
+    }
+    else{
+        console.log("the email-adress you entered is not valid");
+    }
+}
+console.log(checkEmailValidity("n.eeken@novil.nl"))
