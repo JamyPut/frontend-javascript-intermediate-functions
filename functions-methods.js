@@ -8,7 +8,11 @@
 // getEmailDomain("n.eeken@novi-education.nl") geeft novi-education.nl
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
-
+function getEmailDomain(email){
+    const domainDivider = email.lastIndexOf("@");
+    return email.substring(domainDivider +1);
+}
+console.log(getEmailDomain("t.mellink@novi.nl"))
 
 
 
