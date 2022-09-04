@@ -8,11 +8,12 @@
 // getEmailDomain("n.eeken@novi-education.nl") geeft novi-education.nl
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
-function getEmailDomain(email){
-    const domainDivider = email.lastIndexOf("@");
-    return email.substring(domainDivider +1);
-}
-console.log(getEmailDomain("t.mellink@novi.nl"))
+
+// function getEmailDomain(email){
+//     const domainDivider = email.lastIndexOf("@");
+//     return email.substring(domainDivider +1);
+// }
+// console.log(getEmailDomain("t.mellink@novi.nl"))
 
 
 
@@ -23,8 +24,20 @@ console.log(getEmailDomain("t.mellink@novi.nl"))
 // typeOfEmail("t.mellink@novi.nl") geeft geeft "Medewerker"
 // typeOfEmail("novi.nlaapjesk@outlook.com") geeft geeft "Extern" <-- deze moet het ook doen!
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
-
-
+function typeOfEmail(email){
+    const domainDivider = email.lastIndexOf("@");
+    const emailDomain = email.substring(domainDivider + 1);
+    if (emailDomain === "novi-education.nl"){
+        return "Student";
+    }
+    else if (emailDomain === "novi.nl"){
+        return "Medewerker";
+    }
+    else{
+        return "Extern";
+    }
+}
+console.log(typeOfEmail("n.eeken@novi-education.nl"))
 
 /* Opdracht  3 */
 // Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is. De functie returned true of false, afhankelijk van de uitkomst.
