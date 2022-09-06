@@ -61,6 +61,16 @@ console.log(cumLaude([8, 11, 4, 6, 10, 9]));
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
+let total = 0;
+for (let i = 0; i < grades.length; i++){
+    total = total + grades[i];
+}
+
+let averageGrade = total / grades.length
+let roundedAverage = Math.round(averageGrade)
+
+console.log("the average grade = " + averageGrade)
+console.log("the rounded grade = " + roundedAverage)
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
