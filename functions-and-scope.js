@@ -14,13 +14,14 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan bijhouden?
 // Log het antwoord in de terminal.
 
-let cumlaudeGrades = [];
-for (let i = 0; i < grades.length; i++){
-    if (grades[i] >= 8){
-        cumlaudeGrades.push(grades[i])
-    }
-}
-console.log(cumlaudeGrades)
+// let cumlaudeGrades = [];
+//
+// for (let i = 0; i < grades.length; i++){
+//     if (grades[i] >= 8){
+//         cumlaudeGrades.push(grades[i])
+//     }
+// }
+// console.log(cumlaudeGrades)
 // ---- Verwachte uitkomst: 6
 
 
@@ -35,8 +36,19 @@ console.log(cumlaudeGrades)
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
 
+cumLaudeGrades = [];
+
+function cumLaude(grades){
+    for (let i = 0; i < grades.length; i++){
+        if (grades[i] >= 8){
+            cumLaudeGrades.push(grades[i]);
+        }
+    }
+    return cumLaudeGrades;
+}
 
 
+console.log(cumLaude([8, 11, 4, 6, 10, 9]));
 /* Opdracht  2: Gemiddeld cijfer */
 
 /* 2a: Script schrijven  */
