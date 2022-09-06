@@ -61,16 +61,16 @@ console.log(cumLaude([8, 11, 4, 6, 10, 9]));
 
 // ---- Verwachte uitkomst: 6.642857142857143
 
-let total = 0;
-for (let i = 0; i < grades.length; i++){
-    total = total + grades[i];
-}
-
-let averageGrade = total / grades.length
-let roundedAverage = Math.round(averageGrade)
-
-console.log("the average grade = " + averageGrade)
-console.log("the rounded grade = " + roundedAverage)
+// let total = 0;
+// for (let i = 0; i < grades.length; i++){
+//     total = total + grades[i];
+// }
+//
+// let averageGrade = total / grades.length
+// let roundedAverage = Math.round(averageGrade)
+//
+// console.log("the average grade = " + averageGrade)
+// console.log("the rounded grade = " + roundedAverage)
 
 /* 2b: Omschrijven tot een herbruikbare functie */
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
@@ -82,11 +82,26 @@ console.log("the rounded grade = " + roundedAverage)
 // averageGrade([6, 4, 5]) geeft xxxx
 // averageGrade([8, 9, 4, 6, 10]) geeft xxxx
 
+let total = 0;
+
+function averageGrade(grades){
+    for (let i = 0; i < grades.length; i++){
+        total = total + grades[i];
+    }
+    let average = total / grades.length;
+    return Math.round((average + Number.EPSILON) * 100) / 100
+}
+
+console.log(averageGrade([5, 23, 45, 66, 666, 234, 12]))
+
+//OF ANDERE OPTIE:
+// const roundedAverageC1 = averageGrade([5, 23, 45, 66, 666, 234, 12]);
+// console.log(roundedAverageC1)
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
-
+// zie hierboven
 
 
 
